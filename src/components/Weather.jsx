@@ -10,6 +10,14 @@ import sun from "../assets/sun.png";
 import wind from "../assets/wind.png";
 
 const Weather = () => {
+  const handleInputChange = (event) => {
+    const query = event.target.value;
+    if (query.length >= 2) {
+      fetchCityOptions(query);
+    } else {
+      setCityOptions([]);
+    }
+  };
   const inputRef = useRef();
   const [weatherData, setWeatherData] = useState({
     humidity: 0,
@@ -69,14 +77,17 @@ const Weather = () => {
   return (
     <div className="weather">
       <div className="search-bar">
-        <input ref={inputRef} type="text" placeholder="Search" />
-        <img
-          src={searchicon}
-          alt=""
-          height={30}
-          className=""
-          onClick={() => search(inputRef.current.value)}
+      <input
+          ref={inputRef}
+          type="text"
+          placeholder="Search"
+          onChange={handleInputChange}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") search(inputRef.current.value);
+          }}
         />
+        
+        
       </div>
       {weatherData ? (
         <>

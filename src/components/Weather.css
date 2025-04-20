@@ -12,29 +12,56 @@
 }
 
 .search-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 700px;
-}
-
-.search-bar input {
-    padding: 10px;
-    border-radius: 40px;
-    border: none;
-    outline: none;
+    position: relative;
+    width: fit-content;
+    margin: 20px auto;
+    position: relative;
+  }
+  
+  .search-bar input {
+    padding: 10px 40px 10px 15px; /* Right padding makes space for the icon */
     font-size: 16px;
-    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-image: url('../assets/searchicon.png'); /* Adjust path if needed */
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: right 10px center;
+    width: 700px;
     color: black;
-    box-sizing: border-box;
-}
+  }
+  
 
 .search-bar img {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
+
+.autocomplete-dropdown {
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    
+    border-top: none;
+    width: calc(100% - 40px); /* adjust if padding exists */
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .autocomplete-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .autocomplete-dropdown li:hover {
+    background-color: #f0f0f0;
+  }
 
 .weather-icon {
     width: 150px;
