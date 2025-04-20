@@ -69,7 +69,7 @@ const Weather = () => {
   return (
     <div className="weather">
       <div className="search-bar">
-        <input ref={inputRef} type="text" placeholder="Search"/>
+        <input ref={inputRef} type="text" placeholder="Search" />
         <img
           src={searchicon}
           alt=""
@@ -103,6 +103,7 @@ const Weather = () => {
       ) : (
         <></>
       )}
+      
     </div>
   );
 };
