@@ -71,7 +71,7 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    search("London");
+    search("Mumbai");
   }, []);
 
   return (
